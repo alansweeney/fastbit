@@ -4493,27 +4493,19 @@ void ibis::colInts::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN: // compute median
+    /*** Experimental -- Use 90th percentiles instead of Medians for ints */
+    case ibis::selectClause::MEDIAN:
+    LOGGER(ibis::gVerbose >= 0)
+        << "WARN: Using 90 pctile instead of Medians for ints";
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
-	    if (nv > 2) { // general case, require sorting
+        //Nearest rank 90th pctile index
+        const uint32_t index90 = round(nv * 0.9) - 1;
+        if (nv > 2) { // general case, require sorting
 		std::sort(array->begin()+starts[i], array->begin()+starts[i+1]);
-		if (nv % 2 == 1) {
-		    (*array)[i] = (*array)[starts[i] + nv/2];
-		}
-		else {
-		    (*array)[i] = ((*array)[starts[i] + nv/2 - 1]
-				   + (*array)[starts[i] + nv/2]) / 2;
-		}
-	    }
-	    else if (nv == 2) {
-		(*array)[i] = ((*array)[starts[i]]
-			       + (*array)[starts[i] + 1]) / 2;
-	    }
-	    else if (nv == 1 && starts[i] > i) {
-		(*array)[i] = (*array)[starts[i]];
-	    }
-	}
+        }
+        (*array)[i] = (*array)[starts[i] + index90];
+    }
 	break;
     }
     array->resize(nseg);
