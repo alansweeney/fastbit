@@ -1,0 +1,19 @@
+# meta data for data partition test0 written by ibis::tafel::write on Thu Oct 15 10:35:51 2015
+
+BEGIN HEADER
+Name = test0
+Description = /Users/alansweeney/repos/fastbit/examples/.libs/ardea -d test0 -m a:int, b:int -t test0.csv
+Number_of_rows = 191
+Number_of_columns = 2
+Timestamp = 1444926951
+END HEADER
+
+Begin Column
+name = a
+data_type = INT
+End Column
+
+Begin Column
+name = b
+data_type = INT
+End Column
