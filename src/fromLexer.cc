@@ -1,6 +1,6 @@
-#line 2 "src/fromLexer.cc"
+#line 2 "fromLexer.cc"
 
-#line 4 "src/fromLexer.cc"
+#line 4 "fromLexer.cc"
 
 #define  YY_INT_ALIGNED short int
 
@@ -460,14 +460,14 @@ static yyconst flex_int16_t yy_chk[199] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "src/fromLexer.ll"
+#line 1 "fromLexer.ll"
 /* $Id$ -*- mode: c++ -*-
 
    Author: John Wu <John.Wu at acm.org>
    Lawrence Berkeley National Laboratory
    Copyright 2009-2013 the Regents of the University of California
  */
-#line 9 "src/fromLexer.ll"
+#line 9 "fromLexer.ll"
 /** \file Defines the tokenlizer using Flex C++ template. */
 
 #include "fromLexer.h"		// definition of YY_DECL
@@ -483,7 +483,7 @@ typedef ibis::fromParser::token_type token_type;
 /*%option noyywrap*/
 /* regular expressions used to shorten the definitions 
 */
-#line 487 "src/fromLexer.cc"
+#line 487 "fromLexer.cc"
 
 #define INITIAL 0
 
@@ -583,13 +583,13 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 36 "src/fromLexer.ll"
+#line 36 "fromLexer.ll"
 
 
     yylloc->step();
 
 		   /* section defining the tokens */
-#line 593 "src/fromLexer.cc"
+#line 593 "fromLexer.cc"
 
 	if ( !(yy_init) )
 		{
@@ -670,83 +670,83 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 41 "src/fromLexer.ll"
+#line 41 "fromLexer.ll"
 {return token::BITOROP;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 42 "src/fromLexer.ll"
+#line 42 "fromLexer.ll"
 {return token::BITANDOP;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 43 "src/fromLexer.ll"
+#line 43 "fromLexer.ll"
 {return token::MINUSOP;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 44 "src/fromLexer.ll"
+#line 44 "fromLexer.ll"
 {return token::EXPOP;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 45 "src/fromLexer.ll"
+#line 45 "fromLexer.ll"
 {return token::ADDOP;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 46 "src/fromLexer.ll"
+#line 46 "fromLexer.ll"
 {return token::MULTOP;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 47 "src/fromLexer.ll"
+#line 47 "fromLexer.ll"
 {return token::DIVOP;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 48 "src/fromLexer.ll"
+#line 48 "fromLexer.ll"
 {return token::REMOP;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 49 "src/fromLexer.ll"
+#line 49 "fromLexer.ll"
 {return token::EXPOP;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 50 "src/fromLexer.ll"
+#line 50 "fromLexer.ll"
 {return token::ASOP;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 51 "src/fromLexer.ll"
+#line 51 "fromLexer.ll"
 {return token::ONOP;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 52 "src/fromLexer.ll"
+#line 52 "fromLexer.ll"
 {return token::JOINOP;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 53 "src/fromLexer.ll"
+#line 53 "fromLexer.ll"
 {return token::USINGOP;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 54 "src/fromLexer.ll"
+#line 54 "fromLexer.ll"
 {return token::BETWEENOP;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 55 "src/fromLexer.ll"
+#line 55 "fromLexer.ll"
 {return token::ANDOP;}
 	YY_BREAK
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
-#line 57 "src/fromLexer.ll"
+#line 57 "fromLexer.ll"
 { /* a name, unquoted string */
 #if defined(DEBUG) && DEBUG + 0 > 1
     LOGGER(ibis::gVerbose >= 0)
@@ -758,7 +758,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 66 "src/fromLexer.ll"
+#line 66 "fromLexer.ll"
 { /* a number (let parser deal with the sign) */
 #if defined(DEBUG) && DEBUG + 0 > 1
     LOGGER(ibis::gVerbose >= 0)
@@ -770,7 +770,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 75 "src/fromLexer.ll"
+#line 75 "fromLexer.ll"
 { /* a hexidacimal string */
 #if defined(DEBUG) && DEBUG + 0 > 1
     LOGGER(ibis::gVerbose >= 0)
@@ -783,22 +783,22 @@ YY_RULE_SETUP
 case 19:
 /* rule 19 can match eol */
 YY_RULE_SETUP
-#line 84 "src/fromLexer.ll"
+#line 84 "fromLexer.ll"
 ; /* do nothing for blank space */
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 86 "src/fromLexer.ll"
+#line 86 "fromLexer.ll"
 { /* pass the character to the parser as a token */
     return static_cast<token_type>(*yytext);
 }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 90 "src/fromLexer.ll"
+#line 90 "fromLexer.ll"
 ECHO;
 	YY_BREAK
-#line 802 "src/fromLexer.cc"
+#line 802 "fromLexer.cc"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1697,7 +1697,7 @@ void _fromLexer_free (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 90 "src/fromLexer.ll"
+#line 90 "fromLexer.ll"
 
 
 /* additional c++ code to complete the definition of class fromLexer */
