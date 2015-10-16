@@ -4496,7 +4496,7 @@ void ibis::colInts::reduce(const array_t<uint32_t>& starts,
     /*** Experimental -- Use 90th percentiles instead of Medians for ints */
     case ibis::selectClause::MEDIAN:
     LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for ints";
+        << "WARN: Using 90 pctile instead of Medians for ints2";
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
         //Nearest rank 90th pctile index
