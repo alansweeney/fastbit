@@ -4496,7 +4496,7 @@ void ibis::colInts::reduce(const array_t<uint32_t>& starts,
     /*** Experimental -- Use 90th percentiles instead of Medians for ints */
     case ibis::selectClause::MEDIAN:
     LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for ints2";
+        << "WARN: Using 90 pctile instead of Medians for ints.";
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
         //Nearest rank 90th pctile index
@@ -4669,9 +4669,7 @@ void ibis::colUInts::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for UInts"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -4854,9 +4852,7 @@ void ibis::colLongs::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for longs"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -5040,9 +5036,7 @@ void ibis::colULongs::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for uLongs"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -5225,9 +5219,7 @@ void ibis::colShorts::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for shorts"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -5411,9 +5403,7 @@ void ibis::colUShorts::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for ushorts"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -5596,9 +5586,7 @@ void ibis::colBytes::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for bytes"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -5782,9 +5770,7 @@ void ibis::colUBytes::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for uBytes"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -5967,9 +5953,7 @@ void ibis::colFloats::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for Floats"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
@@ -6150,9 +6134,9 @@ void ibis::colDoubles::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
+    case ibis::selectClause::MEDIAN: // compute median
 LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for doubles"; // compute median
+        << "WARN: Using 90 pctile instead of Medians for doubles.";
             for (uint32_t i = 0; i < nseg; ++i) {
                 const uint32_t nv = starts[i+1] - starts[i];
                 //Nearest rank 90th pctile index
@@ -6252,9 +6236,7 @@ void ibis::colStrings::reduce(const array_t<uint32_t>& starts,
 	    }
 	}
 	break;
-    case ibis::selectClause::MEDIAN:
-LOGGER(ibis::gVerbose >= 0)
-        << "WARN: Using 90 pctile instead of Medians for Strings"; // compute median
+    case ibis::selectClause::MEDIAN: // compute median
 	for (uint32_t i = 0; i < nseg; ++i) {
 	    const uint32_t nv = starts[i+1] - starts[i];
 	    if (nv > 2) { // general case, require sorting
